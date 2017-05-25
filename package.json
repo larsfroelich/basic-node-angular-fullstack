@@ -1,0 +1,29 @@
+{
+  "name": "basic-node-angular-fullstack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xlfpx/basic-node-angular-fullstack.git"
+  },
+  "dependencies": {
+    "angular": "^1.6.4",
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2",
+    "osmosis": "^1.1.4",
+    "path": "^0.12.7"
+  },
+  "author": "Lars Froelich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xlfpx/basic-node-angular-fullstack/issues"
+  },
+  "homepage": "https://github.com/xlfpx/basic-node-angular-fullstack#readme"
+}

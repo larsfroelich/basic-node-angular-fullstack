@@ -1,0 +1,7 @@
+script(src='/socket.io/socket.io.js')
+script(src='js/app.js')
+script(src='js/routes.js')
+each controller in controllers
+	script(src = controller)
+each service in services
+	script(src = service)
