@@ -20,6 +20,11 @@
     "osmosis": "^1.1.4",
     "path": "^0.12.7"
   },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
   "author": "Lars Froelich",
   "license": "MIT",
   "bugs": {

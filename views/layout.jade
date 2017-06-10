@@ -1,9 +1,12 @@
 doctype
-html(lang="en")
-	head
-		meta(charset='utf8')
-		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-		base(href='/')
-		title App
-	body
-		block content
+html(lang="en", ng-app="App")
+    head
+        meta(charset='utf8')
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+        base(href='/')
+        title Scraper
+        link(rel='stylesheet', href='/css/app.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous")
+    body
+        block content
