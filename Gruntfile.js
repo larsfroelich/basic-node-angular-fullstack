@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			compile: {
                 files: {
                     'public/css/app.css': [
-                        'stylus/*.styl'
+                        'stylus/index.styl'
                     ]
                 }
 		  	}
