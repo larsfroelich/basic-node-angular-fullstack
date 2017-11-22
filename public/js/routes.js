@@ -1,12 +1,9 @@
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-	$routeProvider.when('/', {
-		templateUrl: 'pages/home'
+app.config(['$stateProvider','$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider.state({
+        name: 'Home',
+        url: '/',
+        templateUrl: '/pages/home'
 	});
-    /*$routeProvider.when('/test', {
-        templateUrl: 'partial/test',
-        reloadOnSearch : false
-    });*/
-	$routeProvider.otherwise({
-		redirectTo: '/'});
+	$urlRouterProvider.otherwise("/");
 	$locationProvider.html5Mode(true);
 }]);

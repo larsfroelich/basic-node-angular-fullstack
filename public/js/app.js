@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app-level angular-module
-var app = angular.module('App', 	[	'ngRoute']);
+var app = angular.module('App', 	[	'ui.router']);
 
 app.filter("sanitize", ['$sce', function($sce) { // todo get rid of this - use ngsanitize
     return function(htmlCode){
