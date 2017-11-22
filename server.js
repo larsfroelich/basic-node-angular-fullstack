@@ -10,7 +10,7 @@ var morgan = require('morgan');
 require(global.ROOT_DIR + '/server/walkDir');
 
 app.set('views', global.ROOT_DIR + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // Routes
 console.log(" - loading routes");
@@ -19,7 +19,8 @@ require(global.ROOT_DIR + '/server/routes')(app); // non-direct routes
 
 app.use(morgan('dev')); // output requests to console
 
+process.env.port = (process.env.port || 8080);
 // launch server
-app.listen(8080, function () {
-    console.log('Server listening on port 8080');
+app.listen(process.env.port, function () {
+    console.log('Server listening on port ' + process.env.port);
 });
