@@ -1,3 +1,10 @@
 app.controller('headerCtrl', function($scope, $http) {
-    console.log("Hello! This is the header controller.")
+    console.log("this is the headerctrl")
+
+    $scope.headerItems = [
+        {title: "Home", link: "/"},
+        {title: "Link", link: "/link"}
+    ];
+    $scope.currentHeaderItem = "";
+
 });

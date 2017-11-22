@@ -1,6 +1,9 @@
-navbar.navbar-expand-lg.navbar-light.bg-light(ng-controller="headerCtrl")
-    a.navbar-brand(href="#") Node-Angular-Fullstack
-    .collapse.navbar-collapse
-        ul.navbar-nav
-            li.nav-item.nav-link
-                a.nav-link(href="#") Home
+.navbar.navbar-expand-lg.navbar-light.bg-light(ng-controller="headerCtrl")
+    // TODO add title
+    a.navbar-brand(href="#") Title
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+            li.nav-item(ng-repeat="headerItem in headerItems" ng-class="{'active': currentHeaderItem == headerItem.title}")
+                a.nav-link(href='{{headerItem.link}}') {{headerItem.title}}
