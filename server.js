@@ -7,10 +7,16 @@ console.log(" - loading path");
 var path = require("path");
 console.log(" - loading morgan");
 var morgan = require('morgan');
+console.log(" - loading body-parser");
+var bodyParser = require('body-parser');
+
 require(global.ROOT_DIR + '/server/walkDir');
 
 app.set('views', global.ROOT_DIR + '/views');
 app.set('view engine', 'pug');
+
+app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); // parse application/json
 
 // Routes
 console.log(" - loading routes");
