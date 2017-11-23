@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
+  "private": true,
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
