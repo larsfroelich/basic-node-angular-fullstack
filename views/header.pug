@@ -5,5 +5,5 @@
         span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
-            li.nav-item(ng-repeat="headerItem in headerItems" ng-class="{'active': currentHeaderItem == headerItem.title}")
+            li.nav-item(ng-repeat="headerItem in headerItems" ng-class="{'active': currentHeaderItem === $index}")
                 a.nav-link(href='{{headerItem.link}}') {{headerItem.title}}
