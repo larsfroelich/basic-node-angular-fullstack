@@ -13,7 +13,7 @@ test('walkDirectory lists files recursively', async () => {
   fs.writeFileSync(path.join(tmp, 'a.txt'), 'a');
   fs.writeFileSync(path.join(sub, 'b.txt'), 'b');
 
-  const files = walkDirectory(tmp, '');
+  const files = await walkDirectory(tmp, '');
   assert.deepStrictEqual(files.sort(), ['/a.txt', '/sub/b.txt']);
 
   fs.rmSync(tmp, { recursive: true, force: true });

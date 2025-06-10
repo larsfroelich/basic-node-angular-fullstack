@@ -1,16 +1,16 @@
-const fs = require('fs');
+const fs = require('fs/promises');
 
-function walkDirectory(rootdir, subdir) {
+async function walkDirectory(rootdir, subdir) {
     let results = [];
-    const list = fs.readdirSync(rootdir + subdir);
-    list.forEach(function(file) {
-        const stat = fs.statSync(rootdir + subdir + '/' + file);
+    const list = await fs.readdir(rootdir + subdir);
+    for (const file of list) {
+        const stat = await fs.stat(rootdir + subdir + '/' + file);
         if (stat && stat.isDirectory()) {
-            results = results.concat(walkDirectory(rootdir, subdir + '/' + file));
+            results = results.concat(await walkDirectory(rootdir, subdir + '/' + file));
         } else {
             results.push(subdir + '/' + file);
         }
-    });
+    }
     return results;
 }
 

@@ -1,13 +1,12 @@
 console.log(" *** Server startup *** ");
 const ROOT_DIR = __dirname;
 console.log(" - loading express");
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 console.log(" - loading path");
-var path = require("path");
+const path = require("path");
 console.log(" - loading morgan");
-var morgan = require('morgan');
-console.log(" - configuring express body parsing");
+const morgan = require('morgan');
 
 const walkDirectory = require(path.join(ROOT_DIR, 'server/walkDir'));
 const controllers = walkDirectory(ROOT_DIR + '/public/', 'js/controllers');
