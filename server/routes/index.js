@@ -11,3 +11,4 @@ module.exports = function(app) {
     app.get('*', function(rq, rs) { rs.render('index') });
 
 };
+

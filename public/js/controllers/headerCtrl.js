@@ -5,3 +5,4 @@ app.controller('headerCtrl', function($scope, $http, $location) {
     ];
     $scope.currentHeaderItem = $scope.headerItems.findIndex(function(t){return t.link === $location.$$url;});
 });
+
