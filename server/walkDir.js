@@ -1,14 +1,23 @@
-const fs = require('fs/promises');
+const fs = require('fs');
+const path = require('path');
 
-async function walkDirectory(rootdir, subdir) {
+function walkDirectory(rootdir, subdir) {
     let results = [];
-    const list = await fs.readdir(rootdir + subdir);
+    let list;
+    try {
+        list = fs.readdirSync(path.join(rootdir, subdir));
+    } catch (err) {
+        if (err && err.code === 'ENOENT') {
+            return results; // directory does not exist
+        }
+        throw err;
+    }
     for (const file of list) {
-        const stat = await fs.stat(rootdir + subdir + '/' + file);
+        const stat = fs.statSync(path.join(rootdir, subdir, file));
         if (stat && stat.isDirectory()) {
-            results = results.concat(await walkDirectory(rootdir, subdir + '/' + file));
+            results = results.concat(walkDirectory(rootdir, path.join(subdir, file)));
         } else {
-            results.push(subdir + '/' + file);
+            results.push('/' + path.join(subdir, file));
         }
     }
     return results;

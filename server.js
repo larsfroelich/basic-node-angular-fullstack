@@ -1,16 +1,16 @@
+const path = require('path');
+
 console.log(" *** Server startup *** ");
 const ROOT_DIR = __dirname;
 console.log(" - loading express");
 const express = require('express');
 const app = express();
-console.log(" - loading path");
-const path = require("path");
 console.log(" - loading morgan");
 const morgan = require('morgan');
 
 const walkDirectory = require(path.join(ROOT_DIR, 'server/walkDir'));
 const controllers = walkDirectory(ROOT_DIR + '/public/', 'js/controllers');
-const services = walkDirectory(ROOT_DIR + '/public/', 'js/services/');
+const services = walkDirectory(ROOT_DIR + '/public/', 'js/services');
 
 app.set('views', ROOT_DIR + '/views');
 app.set('view engine', 'pug');
