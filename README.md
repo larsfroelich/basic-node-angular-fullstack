@@ -3,6 +3,10 @@ A basic program to have an express-server running with an empty angular-project 
 The server listens on the port specified by the `PORT` environment variable and falls back to `8080` if it is not set.
 
 
+## Requirements
+
+Node.js 20 or newer is recommended. An `.nvmrc` file is included for convenience.
+
 ## Installation
 
 Install all dependencies using `npm`:
@@ -25,6 +29,20 @@ Run the server with the provided start script:
 
 ```bash
 npm start
+```
+
+## Running tests
+
+Run the Node.js test runner with:
+
+```bash
+npm test
+```
+
+To check code style using ESLint:
+
+```bash
+npm run lint
 ```
 
 ## Folder structure
