@@ -4,8 +4,7 @@ const path = require('path');
 const assert = require('node:assert');
 const test = require('node:test');
 
-require('../server/walkDir');
-const walkDirectory = global.walkDirectory;
+const walkDirectory = require('../server/walkDir');
 
 test('walkDirectory lists files recursively', async () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'walk-test-'));
