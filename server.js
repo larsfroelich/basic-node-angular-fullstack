@@ -7,8 +7,6 @@ console.log(" - loading path");
 const path = require("path");
 console.log(" - loading morgan");
 const morgan = require('morgan');
-console.log(" - loading body-parser");
-const bodyParser = require('body-parser');
 
 const walkDirectory = require(path.join(ROOT_DIR, 'server/walkDir'));
 const controllers = walkDirectory(ROOT_DIR + '/public/', 'js/controllers');
@@ -17,8 +15,8 @@ const services = walkDirectory(ROOT_DIR + '/public/', 'js/services/');
 app.set('views', ROOT_DIR + '/views');
 app.set('view engine', 'pug');
 
-app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
-app.use(bodyParser.json()); // parse application/json
+app.use(express.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
+app.use(express.json()); // parse application/json
 
 // Routes
 console.log(" - loading routes");
