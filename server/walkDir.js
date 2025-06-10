@@ -14,5 +14,4 @@ function walkDirectory(rootdir, subdir) {
     return results;
 }
 
-global.walkDirectory = walkDirectory;
 module.exports = walkDirectory;
