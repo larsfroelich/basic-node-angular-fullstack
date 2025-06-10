@@ -1,5 +1,7 @@
 # basic-node-angular-fullstack
 A basic program to have an express-server running with an empty angular-project for the frontend.
+The server listens on the port specified by the `PORT` environment variable and falls back to `8080` if it is not set.
+
 
 ## Installation
 

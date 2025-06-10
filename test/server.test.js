@@ -31,7 +31,7 @@ test('server responds to root route', async () => {
     created = true;
   }
   const proc = spawn('node', ['server.js'], {
-    env: { ...process.env, port },
+    env: { ...process.env, PORT: port },
     stdio: ['ignore', 'pipe', 'pipe']
   });
 

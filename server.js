@@ -27,9 +27,9 @@ require(path.join(ROOT_DIR, 'server/routes'))(app, controllers, services); // no
 
 app.use(morgan('dev')); // output requests to console
 
-process.env.port = (process.env.port || 8080);
+const port = process.env.PORT || 8080;
 // launch server
-app.listen(process.env.port, function () {
-    console.log('Server listening on port ' + process.env.port);
+app.listen(port, function () {
+    console.log('Server listening on port ' + port);
 });
 
