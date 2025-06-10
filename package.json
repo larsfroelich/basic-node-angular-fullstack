@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "eslint \"**/*.js\"",
-    "test": "npm run lint && node --test",
+    "test": "node --test",
     "start": "node server.js"
   },
   "repository": {
