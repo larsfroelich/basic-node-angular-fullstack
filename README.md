@@ -2,7 +2,7 @@
 A basic template for an express-server running with an empty angular-project for the frontend.
 The server listens on the port specified by the `PORT` environment variable and falls back to `8080` if it is not set.
 
-> **Warning**: This project is deprecated and no longer maintained. It is recommended to use more modern frameworks and libraries for new projects.
+> ⚠️ **Warning**: This project is deprecated and no longer maintained. It is recommended to use more modern frameworks and libraries for new projects.
 
 ## Requirements
 Node.js 20 or newer is recommended. An `.nvmrc` file is included for convenience.
