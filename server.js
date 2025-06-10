@@ -1,5 +1,5 @@
 console.log(" *** Server startup *** ");
-global.ROOT_DIR = __dirname;
+const ROOT_DIR = __dirname;
 console.log(" - loading express");
 var express = require('express');
 var app = express();
@@ -10,9 +10,11 @@ var morgan = require('morgan');
 console.log(" - loading body-parser");
 var bodyParser = require('body-parser');
 
-require(global.ROOT_DIR + '/server/walkDir');
+const walkDirectory = require(path.join(ROOT_DIR, 'server/walkDir'));
+const controllers = walkDirectory(ROOT_DIR + '/public/', 'js/controllers');
+const services = walkDirectory(ROOT_DIR + '/public/', 'js/services/');
 
-app.set('views', global.ROOT_DIR + '/views');
+app.set('views', ROOT_DIR + '/views');
 app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
@@ -20,8 +22,8 @@ app.use(bodyParser.json()); // parse application/json
 
 // Routes
 console.log(" - loading routes");
-app.use(express.static(path.join(global.ROOT_DIR, 'public'))); // serving static files
-require(global.ROOT_DIR + '/server/routes')(app); // non-direct routes
+app.use(express.static(path.join(ROOT_DIR, 'public'))); // serving static files
+require(path.join(ROOT_DIR, 'server/routes'))(app, controllers, services); // non-direct routes
 
 app.use(morgan('dev')); // output requests to console
 
